@@ -145,111 +145,60 @@ public class CreateAExcelFile {
 
 				if (dept.equalsIgnoreCase("cse")) {
 					row.createCell(2).setCellValue(dept);
-					System.out.println("Enter Maths Marks");
-					String maths = scannerObject.next();
-					if ((int) Integer.parseInt(maths) < 40) {
-						row.createCell(3).setCellStyle(cellStyle1);
-						row.getCell(3).setCellValue(maths);
-					} else
-						row.createCell(3).setCellValue(maths);
-					System.out.println("Enter English Marks");
-					String english = scannerObject.next();
-					if ((int) Integer.parseInt(english) < 40) {
-						row.createCell(4).setCellStyle(cellStyle1);
-						row.getCell(4).setCellValue(english);
-					} else
-						row.createCell(4).setCellValue(english);
-					System.out.println("Enter computer programming Marks");
-					String computer = scannerObject.next();
-					if ((int) Integer.parseInt(computer) < 40) {
-						row.createCell(5).setCellStyle(cellStyle1);
-						row.getCell(5).setCellValue(computer);
-					} else
-						row.createCell(5).setCellValue(computer);
+					String cse[]= {"maths","english","computer"};
+					for(int k=0,m=3;k<cse.length;k++,m++)
+					{
+						System.out.println("Enter "+cse[k]+" Marks");
+						cse[k]= scannerObject.next();
+						if ((int) Integer.parseInt(cse[k]) < 40) {
+							row.createCell(m).setCellStyle(cellStyle1);
+							row.getCell(m).setCellValue(cse[k]);
+						} else
+							row.createCell(m).setCellValue(cse[k]);
+					}
 					row.createCell(6).setCellValue("-");
 					row.createCell(7).setCellValue("-");
-					row.createCell(8).setCellValue(total(maths, english, computer));
-					row.createCell(9).setCellValue(average(maths, english, computer));
+					row.createCell(8).setCellValue(total(cse[0], cse[1], cse[2]));
+					row.createCell(9).setCellValue(total(cse[0], cse[1], cse[2]));
 				}
 
 				// Mechanical Department
 
 				if (dept.equalsIgnoreCase("mech")) {
 					row.createCell(2).setCellValue(dept);
-					System.out.println("Enter Maths Marks");
-					String maths = scannerObject.next();
-					if ((int) Integer.parseInt(maths) < 40) {
-						row.createCell(3).setCellStyle(cellStyle1);
-						row.getCell(3).setCellValue(maths);
-					} else
-						row.createCell(3).setCellValue(maths);
-					System.out.println("Enter English Marks");
-					String english = scannerObject.next();
-					if ((int) Integer.parseInt(english) < 40) {
-						row.createCell(4).setCellStyle(cellStyle1);
-						row.getCell(4).setCellValue(english);
-					} else
-						row.createCell(4).setCellValue(english);
-					System.out.println("Enter computer programming Marks");
-					String computer = scannerObject.next();
-					if ((int) Integer.parseInt(computer) < 40) {
-						row.createCell(5).setCellStyle(cellStyle1);
-						row.getCell(5).setCellValue(computer);
-					} else
-						row.createCell(5).setCellValue(computer);
-					System.out.println("Enter Engineering Drawings Marks");
-					String drawing = scannerObject.next();
-					if ((int) Integer.parseInt(drawing) < 40) {
-						row.createCell(6).setCellStyle(cellStyle1);
-						row.getCell(6).setCellValue(drawing);
-					} else
-						row.createCell(6).setCellValue(drawing);
+					String mechanical[]= {"maths","english","computer","Engineering Drawings"};
+					for(int k=0,m=3;k<mechanical.length;k++,m++)
+					{
+						System.out.println("Enter "+mechanical[k]+" Marks");
+						mechanical[k]= scannerObject.next();
+						if ((int) Integer.parseInt(mechanical[k]) < 40) {
+							row.createCell(m).setCellStyle(cellStyle1);
+							row.getCell(m).setCellValue(mechanical[k]);
+						} else
+							row.createCell(m).setCellValue(mechanical[k]);
+					}
 					row.createCell(7).setCellValue("-");
-					row.createCell(8).setCellValue(total(maths, english, computer, drawing));
-					row.createCell(9).setCellValue(average(maths, english, computer, drawing));
+					row.createCell(8).setCellValue(total(mechanical[0], mechanical[1], mechanical[2],mechanical[3]));
+					row.createCell(9).setCellValue(average(mechanical[0], mechanical[1], mechanical[2],mechanical[3]));
 				}
 
 				// Civil Department
 
 				if (dept.equalsIgnoreCase("civil")) {
 					row.createCell(2).setCellValue(dept);
-					System.out.println("Enter Maths Marks");
-					String maths = scannerObject.next();
-					if ((int) Integer.parseInt(maths) < 40) {
-						row.createCell(3).setCellStyle(cellStyle1);
-						row.getCell(3).setCellValue(maths);
-					} else
-						row.createCell(3).setCellValue(maths);
-					System.out.println("Enter English Marks");
-					String english = scannerObject.next();
-					if ((int) Integer.parseInt(english) < 40) {
-						row.createCell(4).setCellStyle(cellStyle1);
-						row.getCell(4).setCellValue(english);
-					} else
-						row.createCell(4).setCellValue(english);
-					System.out.println("Enter computer programming Marks");
-					String computer = scannerObject.next();
-					if ((int) Integer.parseInt(computer) < 40) {
-						row.createCell(5).setCellStyle(cellStyle1);
-						row.getCell(5).setCellValue(computer);
-					} else
-						row.createCell(5).setCellValue(computer);
-					System.out.println("Enter Engineering Drawings Marks");
-					String drawing = scannerObject.next();
-					if ((int) Integer.parseInt(drawing) < 40) {
-						row.createCell(6).setCellStyle(cellStyle1);
-						row.getCell(6).setCellValue(drawing);
-					} else
-						row.createCell(6).setCellValue(drawing);
-					System.out.println("Enter Engineering Digital Electronics Marks");
-					String digital = scannerObject.next();
-					if ((int) Integer.parseInt(digital) < 40) {
-						row.createCell(7).setCellStyle(cellStyle1);
-						row.getCell(7).setCellValue(digital);
-					} else
-						row.createCell(7).setCellValue(digital);
-					row.createCell(8).setCellValue(total(maths, english, computer, drawing, digital));
-					row.createCell(9).setCellValue(average(maths, english, computer, drawing, digital));
+					String civil[]= {"maths","english","computer","Engineering Drawings","digital"};
+					for(int k=0,m=3;k<civil.length;k++,m++)
+					{
+						System.out.println("Enter "+civil[k]+" Marks");
+						civil[k]= scannerObject.next();
+						if ((int) Integer.parseInt(civil[k]) < 40) {
+							row.createCell(m).setCellStyle(cellStyle1);
+							row.getCell(m).setCellValue(civil[k]);
+						} else
+							row.createCell(m).setCellValue(civil[k]);
+					}
+					row.createCell(8).setCellValue(total(civil[0], civil[1], civil[2],civil[3],civil[4]));
+					row.createCell(9).setCellValue(average(civil[0], civil[1], civil[2],civil[3],civil[4]));
 				}
 				i++;
 				System.out.println("If you want to continue y or n");
