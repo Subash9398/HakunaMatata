@@ -1,23 +1,16 @@
 package Dec24;
 
-import java.awt.Color;
-import java.awt.Font;
 import java.io.*;
 import java.util.Iterator;
 import java.util.Scanner;
 
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.hssf.util.HSSFColor;
-import org.apache.poi.sl.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.FormulaEvaluator;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.xssf.usermodel.XSSFCell;
-import org.apache.poi.xssf.usermodel.XSSFCellStyle;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFCellStyle;
 import org.apache.poi.hssf.usermodel.HSSFFont;
@@ -145,11 +138,10 @@ public class CreateAExcelFile {
 
 				if (dept.equalsIgnoreCase("cse")) {
 					row.createCell(2).setCellValue(dept);
-					String cse[]= {"maths","english","computer"};
-					for(int k=0,m=3;k<cse.length;k++,m++)
-					{
-						System.out.println("Enter "+cse[k]+" Marks");
-						cse[k]= scannerObject.next();
+					String cse[] = { "maths", "english", "computer" };
+					for (int k = 0, m = 3; k < cse.length; k++, m++) {
+						System.out.println("Enter " + cse[k] + " Marks");
+						cse[k] = scannerObject.next();
 						if ((int) Integer.parseInt(cse[k]) < 40) {
 							row.createCell(m).setCellStyle(cellStyle1);
 							row.getCell(m).setCellValue(cse[k]);
@@ -166,11 +158,10 @@ public class CreateAExcelFile {
 
 				if (dept.equalsIgnoreCase("mech")) {
 					row.createCell(2).setCellValue(dept);
-					String mechanical[]= {"maths","english","computer","Engineering Drawings"};
-					for(int k=0,m=3;k<mechanical.length;k++,m++)
-					{
-						System.out.println("Enter "+mechanical[k]+" Marks");
-						mechanical[k]= scannerObject.next();
+					String mechanical[] = { "maths", "english", "computer", "Engineering Drawings" };
+					for (int k = 0, m = 3; k < mechanical.length; k++, m++) {
+						System.out.println("Enter " + mechanical[k] + " Marks");
+						mechanical[k] = scannerObject.next();
 						if ((int) Integer.parseInt(mechanical[k]) < 40) {
 							row.createCell(m).setCellStyle(cellStyle1);
 							row.getCell(m).setCellValue(mechanical[k]);
@@ -178,27 +169,26 @@ public class CreateAExcelFile {
 							row.createCell(m).setCellValue(mechanical[k]);
 					}
 					row.createCell(7).setCellValue("-");
-					row.createCell(8).setCellValue(total(mechanical[0], mechanical[1], mechanical[2],mechanical[3]));
-					row.createCell(9).setCellValue(average(mechanical[0], mechanical[1], mechanical[2],mechanical[3]));
+					row.createCell(8).setCellValue(total(mechanical[0], mechanical[1], mechanical[2], mechanical[3]));
+					row.createCell(9).setCellValue(average(mechanical[0], mechanical[1], mechanical[2], mechanical[3]));
 				}
 
 				// Civil Department
 
 				if (dept.equalsIgnoreCase("civil")) {
 					row.createCell(2).setCellValue(dept);
-					String civil[]= {"maths","english","computer","Engineering Drawings","digital"};
-					for(int k=0,m=3;k<civil.length;k++,m++)
-					{
-						System.out.println("Enter "+civil[k]+" Marks");
-						civil[k]= scannerObject.next();
+					String civil[] = { "maths", "english", "computer", "Engineering Drawings", "digital" };
+					for (int k = 0, m = 3; k < civil.length; k++, m++) {
+						System.out.println("Enter " + civil[k] + " Marks");
+						civil[k] = scannerObject.next();
 						if ((int) Integer.parseInt(civil[k]) < 40) {
 							row.createCell(m).setCellStyle(cellStyle1);
 							row.getCell(m).setCellValue(civil[k]);
 						} else
 							row.createCell(m).setCellValue(civil[k]);
 					}
-					row.createCell(8).setCellValue(total(civil[0], civil[1], civil[2],civil[3],civil[4]));
-					row.createCell(9).setCellValue(average(civil[0], civil[1], civil[2],civil[3],civil[4]));
+					row.createCell(8).setCellValue(total(civil[0], civil[1], civil[2], civil[3], civil[4]));
+					row.createCell(9).setCellValue(average(civil[0], civil[1], civil[2], civil[3], civil[4]));
 				}
 				i++;
 				System.out.println("If you want to continue y or n");

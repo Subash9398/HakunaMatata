@@ -1,10 +1,12 @@
-package Dec16;
+package Jan17;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
-public class DaysCalculation {
+public class DayCalculate {
 	static void calculate(String firstDate,String secondDate)
 	{
+		
 		String []splitFirstDate=firstDate.split(" ");
 		String splitSecondDate[]=secondDate.split(" ");
 		int a[]=new int[splitFirstDate.length];
@@ -15,31 +17,13 @@ public class DaysCalculation {
 			b[i]=Integer.parseInt(splitSecondDate[i]);
 		}
 		int leep = 0,monthadd=0;
-		for(int i=0;i<a.length;i++)
-		{ 
-			if(i==2)
-			{
-				leep=(b[i]-a[i])/4;
-			}
-			if(leep==0)
-			{
-				if (i==1)
-				{
-					int c=b[i]-a[i];
-					monthadd=c/2;
-				}
-			}
-			if(i==1)
-			{
-				a[i]=a[i]*30;           //multiply the months 30
-				b[i]=b[i]*30;
-			}
-			else if(i==2)
-			{
-				a[i]=a[i]*365;         //multiply the years 365 
-				b[i]=b[i]*365;
-			}
-		}
+				int c=b[1]-a[1];
+				monthadd=c/2;          //month calculation
+				a[1]=a[1]*30;           //multiply the months 30
+				b[1]=b[1]*30;
+				leep=(b[2]-a[2])/4;     //leep year calculation
+				a[2]=a[2]*365;         //multiply the years 365 
+				b[2]=b[2]*365;
 		int countOfDays=0;
 		for(int i=0;i<a.length;i++)
 		{

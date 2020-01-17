@@ -36,13 +36,13 @@ package Jan07;
 	case 2:
 	{
 	    try {
-	        Class.forName("sqlite-jdbc-3.27.2.1.jar");
-	        Connection c=DriverManager.getConnection("jdbc:sqlite:~/Downloads/student-journel.sqlite.");
+	        Class.forName("org.sqlite.JDBC");
+	        Connection c=DriverManager.getConnection("jdbc:sqlite:/home/hmspl/Downloads/train_online_orders.db");
 	        Statement s1= c.createStatement();
-	        ResultSet ss=s1.executeQuery("select * from std");
+	        ResultSet ss=s1.executeQuery("select * from Student");
 	        while(i<al.size()){
 	            String g=(String)al.get(i);
-	            s1.execute("insert into std (name) values ('"+g+"')");
+	            s1.execute("insert into Student (name) values ('"+g+"')");
 	            i++;
 	        }
 	 

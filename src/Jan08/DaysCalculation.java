@@ -20,8 +20,8 @@ public class DaysCalculation {
 	{
 		Scanner scannerObject=new Scanner(System.in);
 		System.out.println("Enter the Dates via DD MM YYYY This Format");
-	String Date1 = scannerObject.next();
-	String Date2 =  scannerObject.next();
+	String Date1 = scannerObject.nextLine();
+	String Date2 =  scannerObject.nextLine();
     count(Date1,Date2);
 
 }
