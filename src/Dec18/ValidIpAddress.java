@@ -1,7 +1,5 @@
 package Dec18;
 
-
-
 /*
  * Output
  * 192.168.123.12
@@ -9,8 +7,7 @@ package Dec18;
  *Using regular expression
  */
 
-
-import java.net.InetAddress;
+//import java.net.InetAddress;
 import java.util.Scanner;
 import java.util.regex.*;
 
