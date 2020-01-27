@@ -25,10 +25,5 @@ public class View implements IView {
 		System.out.println(result);
 	}
 
-	public static void main(String args[]) {
-		
-		View view=new View();
-		view.setPresenter(new Presenter(view,new Model()));
-		
-	}
+	
 }
