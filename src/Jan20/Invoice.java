@@ -5,8 +5,8 @@ import java.util.regex.*;
 
 public class Invoice {
 
-	static String[] field = {"name", "phone", "address", "date", "total amount", "tax"};
-	static String[] regex = {"[a-zA-Z]+[ ]*", "[\\d]{10}", ".+[-]\\s\\d{6}", 
+	static String[] field = {"name", "phone", "address", "date", "tax", "total amount"};
+	static String[] regex = {"[a-zA-Z]+[ ]*", "[\\d]{10}", ".+[-]\\s*\\d{6}", 
 			"\\d{2}-\\d{2}-\\d{4}[ ]", "\\d+\\.\\d{2}", "\\d+\\.\\d{2}"};
 	
 	static void invoice(String input)
