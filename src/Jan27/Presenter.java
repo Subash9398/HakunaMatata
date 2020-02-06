@@ -4,7 +4,7 @@ public class Presenter implements IPresenter{
 	private IModel model;
 	private IView view;
 
-public Presenter(View view, Model model) {
+public Presenter(IView view, IModel model) {
 	// TODO Auto-generated constructor stub
 	this.model=model;
 	this.view=view;
